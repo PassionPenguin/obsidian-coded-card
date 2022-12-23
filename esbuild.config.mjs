@@ -1,6 +1,7 @@
 import esbuild from "esbuild";
 import process from "process";
 import builtins from 'builtin-modules'
+import { solidPlugin } from "esbuild-plugin-solid"
 
 const banner =
 `/*
@@ -15,7 +16,7 @@ esbuild.build({
 	banner: {
 		js: banner,
 	},
-	entryPoints: ['main.ts'],
+	entryPoints: ["src/main.ts"],
 	bundle: true,
 	external: [
 		'obsidian',
@@ -38,5 +39,9 @@ esbuild.build({
 	logLevel: "info",
 	sourcemap: prod ? false : 'inline',
 	treeShaking: true,
-	outfile: 'main.js',
+	outdir: "dist",
+	plugins: [solidPlugin()],
+	loader: {
+		".css": "text",
+	},
 }).catch(() => process.exit(1));

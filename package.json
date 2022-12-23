@@ -1,14 +1,21 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "obsidian-coded-card",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
-	"main": "main.js",
+	"description": "A simple plugin to create a card with code for Obsidian.",
+	"main": "src/main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"dist": "rm -rf dist && mkdir dist && npm run build && sass styles.scss styles.css && cp versions.json manifest.json dist/",
+		"release": "node support/version-bump.mjs",
 		"version": "node version-bump.mjs && git add manifest.json versions.json"
 	},
-	"keywords": [],
+	"keywords": [
+		"Obsidian",
+		"plugin",
+		"Card",
+		"Markdown"
+	],
 	"author": "",
 	"license": "MIT",
 	"devDependencies": {
@@ -20,5 +27,8 @@
 		"obsidian": "latest",
 		"tslib": "2.4.0",
 		"typescript": "4.7.4"
+	},
+	"dependencies": {
+		"esbuild-plugin-solid": "^0.4.2"
 	}
 }
