@@ -1,0 +1,166 @@
+.invalid-card-container {
+	margin: 0 16px;
+
+	.invalid-card-tips {
+		color: var(--color-red);
+		font-weight: bold;
+		margin-bottom: 0;
+	}
+
+	.invalid-card-tips-exception-message {
+		margin-top: 0;
+		color: var(--text-muted);
+	}
+
+	.invalid-card-tips-exception-stack {
+		font-size: 12px;
+		white-space: pre;
+		font-family: "JetBrains Mono", monospace;
+	}
+}
+
+.coded-card {
+	padding: 8px 16px 8px 64px;
+	border-radius: 5px;
+	max-width: 512px;
+	width: fit-content;
+	position: relative;
+	box-shadow: var(--shadow-s);
+	margin: 32px auto;
+
+	.icon {
+		width: 32px;
+		height: 32px;
+		background: transparent;
+		outline: 0;
+		box-shadow: none;
+		top: 16px;
+		left: 16px;
+		position: absolute;
+
+		&.icon-fill {
+			fill: var(--text-normal)
+		}
+
+		&.icon-stroke {
+			stroke: var(--text-normal);
+		}
+	}
+
+	.section-title {
+		font-size: var(--h4-size);
+		font-weight: bold;
+		margin-top: 16px;
+	}
+}
+
+.netease-music-card {
+	border: 2px solid var(--color-red);
+
+	img {
+		width: 32px;
+		height: 32px;
+		background: transparent;
+		outline: 0;
+		box-shadow: none;
+		margin-right: 4px;
+	}
+
+	.netease-music-card-info {
+		display: inline-block;
+		margin: 0;
+
+		a {
+			text-decoration: none;
+			color: var(--text-normal);
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.netease-music-card-title {
+			font-size: 18px;
+			font-weight: bold;
+			margin: 0;
+			text-overflow: ellipsis;
+		}
+
+		.netease-music-card-desc {
+			font-size: 12px;
+			color: var(--text-muted);
+			margin: 0;
+			text-overflow: ellipsis;
+		}
+	}
+}
+
+.recipe-card {
+	border: 2px solid var(--color-blue);
+	margin-top: 64px;
+	width: 100%;
+	padding: 64px 32px 32px;
+
+	#recipe-card-cover {
+		width: 128px;
+		height: 128px;
+		object-fit: cover;
+		border-radius: 50%;
+		position: absolute;
+		margin: auto;
+		left: 0;
+		right: 0;
+		text-align: center;
+		top: -64px;
+		z-index: 1;
+		user-select: none;
+		-webkit-user-drag: none;
+		}
+
+	.recipe-card-title {
+		font-weight: bold;
+		font-size: var(--h3-size);
+		text-align: center;
+		margin-bottom: 8px;
+	}
+
+	.recipe-card-description {
+		color: var(--text-muted);
+	}
+
+	.recipe-details {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 32px;
+
+		.recipe-detail {
+			flex-grow: 1;
+			width: 33%;
+			margin-bottom: 8px;
+
+			.recipe-detail-key {
+				display: block;
+				font-weight: bold;
+				color: var(--text-normal);
+			}
+
+			.recipe-detail-value {
+				display: block;
+				color: var(--text-muted);
+			}
+		}
+	}
+
+	.ingredients-and-utilities {
+		display: flex;
+
+		.recipe-ingredients, .recipe-utilities {
+			flex-grow: 1;
+			width: 50%;
+		}
+	}
+
+	.step-title {font-weight: bold;font-size: var(--h5-size);}
+
+	.step-description {color: var(--text-muted);}
+}
