@@ -17,6 +17,7 @@ jobs:
                   node-version: 16
                   registry-url: https://registry.npmjs.org/
             - run: npm install
+            - run: npm install sass -g
             - run: npm run dist
             - run: npm run release
             - run: npm publish
